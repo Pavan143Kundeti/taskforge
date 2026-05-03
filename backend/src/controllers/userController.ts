@@ -4,7 +4,7 @@ import { userRepository } from '../repositories/userRepository';
 import { sendSuccess, sendError } from '../utils/response';
 
 export const userController = {
-  getAll: async (req: AuthRequest, res: Response): Promise<void> => {
+  getAll: async (_req: AuthRequest, res: Response): Promise<void> => {
     try {
       const users = await userRepository.findAll();
       sendSuccess(res, 'Users retrieved', users);

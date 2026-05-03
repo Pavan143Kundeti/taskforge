@@ -26,7 +26,7 @@ export const taskController = {
       }
 
       const { projectId } = req.params;
-      const { status, priority, assigneeId, search, page, limit } = req.query;
+      const { status, priority, assigneeId, search, page, limit } = req.query as any;
 
       const filters: TaskFilters = {
         status: status as string,
