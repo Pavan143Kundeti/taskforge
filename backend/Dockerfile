@@ -38,5 +38,5 @@ COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 # Expose port
 EXPOSE 5000
 
-# Start command
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/index.js"]
+# Start command - run migrations then start server
+CMD npx prisma migrate deploy && node dist/index.js
